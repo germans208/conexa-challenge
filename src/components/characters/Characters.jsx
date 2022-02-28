@@ -16,32 +16,30 @@ const Characters = (props) => {
             {character !== undefined ?
                 (
                     <div>
-                        <Box sx={{ flexGrow: 1 }}>
-                            <Grid container spacing={2} columns={16}>
-                                {character.map((character, index) => (
-                                    <Grid item xs={8} key={index}>
-                                        <Card sx={{ display: 'flex' }}>
-                                            <CardMedia
-                                                component="img"
-                                                sx={{ width: 151 }}
-                                                image={character.image}
-                                                alt={character.name}
-                                            />
-                                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                                <CardContent sx={{ flex: '1 0 auto' }}>
-                                                    <Typography variant="h6" gutterBottom component="div">
-                                                        {character.name}
-                                                    </Typography>
-                                                    <Typography variant="subtitle1" color="text.secondary" component="div">
-                                                        {character.status} - {character.species}
-                                                    </Typography>
-                                                </CardContent>
-                                            </Box>
-                                        </Card>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Box>
+                        <Grid container spacing={2} columns={16}>
+                            {character.map((character, index) => (
+                                <Grid item xs={8} key={index}>
+                                    <Card sx={{ display: 'flex' }}>
+                                        <CardMedia
+                                            component="img"
+                                            sx={{ width: 151 }}
+                                            image={character.image}
+                                            alt={character.name}
+                                        />
+                                        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                            <CardContent sx={{ flex: '1 0 auto' }}>
+                                                <Typography variant="h6" gutterBottom component="div">
+                                                    {character.name}
+                                                </Typography>
+                                                <Typography variant="subtitle1" color="text.secondary" component="div">
+                                                    {character.status} - {character.species}
+                                                </Typography>
+                                            </CardContent>
+                                        </Box>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
                         {(info.pages > 1) &&
                             (
                                 <Paginations

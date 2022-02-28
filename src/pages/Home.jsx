@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Characters from "../components/characters/Characters";
 import Container from '@mui/material/Container';
+import CharacterGrid from '../components/characters/CharacterGrid';
 
 //import CustomAppBar from '../components/layout/CustomAppBar';
 
@@ -32,7 +33,7 @@ const Home = () => {
     useEffect(() => {
         fetchAPI(url);
     }, [url]) // eslint-disable-line react-hooks/exhaustive-deps
- 
+
 
     const nextPage = () => {
         setUrl(characters.info.next);
@@ -47,18 +48,26 @@ const Home = () => {
     };
 
     return (
-        <Container>
-            <Box>
-                <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <div>
+            <Container>
+                <Box>
+                    <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                        <Grid item xs={12}>
+                            asdasd
+                        </Grid>
+                        {/* 
+                       <Characters characters={characters} nextPage={nextPage} prevPage={prevPage} page={page} />
+                    
                     <Grid item xs={6}>
                         <Characters characters={characters} nextPage={nextPage} prevPage={prevPage} page={page} />
+                    </Grid> */}
                     </Grid>
-                    <Grid item xs={6}>
-                        <Characters characters={characters} nextPage={nextPage} prevPage={prevPage} page={page} />
-                    </Grid>
-                </Grid>
-            </Box>
-        </Container>
+                </Box>
+            </Container>
+            <Container fixed>
+                    <CharacterGrid />
+            </Container>
+        </div>
     );
 }
 
