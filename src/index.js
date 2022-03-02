@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { ConexaProvider } from "./context";
 
 ReactDOM.render(
-    <App />, document.getElementById('root')
+    <ConexaProvider>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </ConexaProvider>,
+    document.getElementById("root")
 );
