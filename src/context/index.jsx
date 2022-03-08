@@ -1,4 +1,3 @@
-import { toUnitless } from "@mui/material/styles/cssUtils";
 import React, { useState, useEffect } from "react";
 
 const url = "https://rickandmortyapi.com/api/character";
@@ -7,6 +6,9 @@ const ConexaContext = React.createContext();
 const ConexaProvider = (props) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
+
+  const [data, setData] = useState({});
+
 
   const [info1, setInfo1] = useState([]);
   const [info2, setInfo2] = useState([]);
@@ -27,6 +29,9 @@ const ConexaProvider = (props) => {
     let query = `${url}`;
     const response = await fetch(query);
     response.json().then((response) => {
+
+setData(response.results)
+
       if (character === 1) {
         setData1(response.results);
         setInfo1(response.info);
@@ -84,6 +89,7 @@ const ConexaProvider = (props) => {
   return (
     <ConexaContext.Provider
       value={{
+        data,
         info1,
         info2,
         data1,

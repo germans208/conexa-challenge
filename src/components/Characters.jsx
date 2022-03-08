@@ -5,9 +5,10 @@ import Character from './Character';
 
 const Characters = ({ id }) => {
     const appContext = useContext(ConexaContext);
-    const { data } = appContext;
+    const { data1, data2 } = appContext;
 
-    console.log(appContext)
+    const data = (id === 1) ? data1 : data2;
+
     return (
         <Fragment>
             <Grid container spacing={1} columns={16}>
