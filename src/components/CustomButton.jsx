@@ -2,20 +2,25 @@ import React, { useContext } from "react";
 import Button from '@mui/material/Button';
 import { ConexaContext } from '../context';
 
-const CustomButton = ({ character }) => {
+const CustomButton = ({ character, idClick }) => {
   const appContext = useContext(ConexaContext);
   const { queryEspisodes } = appContext;
 
-  const handleClick = (character, e) => {
+  const handleClick = (character, idClick, e) => {
     e.preventDefault();
-    queryEspisodes(character);
+    queryEspisodes(character, idClick);
+
+    //document.getElementById(`${character}_${idClick}`).disabled = true;
+
   }
 
   return (
     <Button
       variant="contained"
-      onClick={(e) => handleClick(character, e)}
-      key={character}
+      onClick={(e) => handleClick(character, idClick, e)}
+      key={`${character}_${idClick}`}
+      id={`${character}_${idClick}`}
+      
     >
       Click
     </Button>

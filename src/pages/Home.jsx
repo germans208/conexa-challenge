@@ -15,19 +15,20 @@ const Home = () => {
                 <Box>
                     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid item xs={12} sm={6}>
-                            <Characters />
-                            <Paginations />
+                            <Characters id={1} />
+                            <Paginations id={1} />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Characters />
-                            <Paginations />
+                            <Characters id={2}/>
+                            <Paginations id={2} />
                         </Grid>
                     </Grid>
                 </Box>
             </Container>
             <Container fixed>
-                <FilterCharacterGrid />
+                <FilterCharacterGrid  />
             </Container>
+            
         </div>
     );
 }

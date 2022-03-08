@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CustomButton from './CustomButton';
 
-const Character = ({ id, name, image, status, species }) => {
+const Character = ({ character, idClick, name, image, status, species }) => {
 
     return (
         <Grid item xs={8} sm={8} key={name}>
@@ -26,7 +26,7 @@ const Character = ({ id, name, image, status, species }) => {
                         <Typography variant="subtitle1" color="text.secondary" component="div">
                             {status} - {species}
                         </Typography>
-                        <CustomButton character={id} />
+                        <CustomButton character={character} idClick={idClick} />
                     </CardContent>
 
                 </Box>
